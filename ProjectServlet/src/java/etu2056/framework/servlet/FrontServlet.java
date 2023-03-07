@@ -1,8 +1,17 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package etu2056.framework.servlet;
+
+/**
+ *
+ * @author jaona
+ */
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
  */
-package servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -15,7 +24,7 @@ import jakarta.servlet.http.HttpServletResponse;
  *
  * @author jaona
  */
-public class Servlet extends HttpServlet {
+public class FrontServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
