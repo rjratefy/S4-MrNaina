@@ -10,19 +10,28 @@ package etu2056.framework;
  * @author jaona
  */
 public class Mapping { 
-    String className;
-    String Method;
+    String ClassName;
+    String Method; 
 
-    public Mapping(String simpleName, String name) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public Mapping(String ClassName, String Method) {
+        this.ClassName = ClassName;
+        this.Method = Method;
+    }
+    
+
+    public String getClassName() {
+        return ClassName;
+    }
+
+    public void setClassName(String ClassName) {
+        this.ClassName = ClassName;
     }
 
     public String getMethod() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return Method;
     }
 
-    public String getClassName() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public void setMethod(String Method) {
+        this.Method = Method;
     }
-    
 }

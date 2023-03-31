@@ -16,13 +16,13 @@ public class Emp {
     
     public Emp(){}
         
-     //   @Method(name_method = "emp-add")
+     @Method(name_method = "emp-add")
         public void emp_add()
         { 
             System.out.println("emp-add");
         } 
         
-      //  @Method(name_method = "emp-all")
+      @Method(name_method = "emp-all")
          public void emp_all()
         { 
             System.out.println("emp-all");

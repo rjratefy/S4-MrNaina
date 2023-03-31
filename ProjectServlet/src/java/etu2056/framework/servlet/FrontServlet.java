@@ -48,7 +48,7 @@ public class FrontServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8"); 
-        String [] a = request.getRequestURI().split("/");
+       // String [] a = request.getRequestURI().split("/");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
@@ -57,7 +57,12 @@ public class FrontServlet extends HttpServlet {
             out.println("<title>Servlet Servlet</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet Servlet at " + a[2] + "</h1>");
+            out.println("<h1>Servlet Servlet at " + request.getRequestURI() + "</h1>"); 
+             
+            for ( HashMap.Entry <String, Mapping> en : this.MappingUrls.entrySet()){
+            out.println(" Le nom de la classe : "+en.getValue().getClassName());
+            out.println(" La methode : "+ en.getValue().getMethod()); 
+            }
             out.println("</body>");
             out.println("</html>");
         }
@@ -66,7 +71,6 @@ public class FrontServlet extends HttpServlet {
      @Override
     public void init(){
         try{
-            //System.out.println("etu2056.framework.servlet.FrontServlet.init()");
             Annotation a = new Annotation();
             Vector<Class> vec = a.getClassFrom("etu2056.models");
             for(int i = 0; i < vec.size(); i++) { 
@@ -86,35 +90,27 @@ public class FrontServlet extends HttpServlet {
         }
        }
 //       
-        public void insertHashMap(Class<?> className) {
+        public void insertHashMap(Class <?> className) {
          for (java.lang.reflect.Method declaredMethod : className.getDeclaredMethods()) {
-             //System.out.println("tonga1 : "+ className.getDeclaredMethods()[i].getName());
-             if (declaredMethod.getAnnotation(Method.class) != null) {
+           // System.out.println(declaredMethod.getAnnotation(Method.class));
+             if (declaredMethod.getAnnotation(Method.class) != null){
                  String url = declaredMethod.getAnnotation(Method.class).name_method();
-                 //System.out.println(url);
+               //System.out.println(url);
                  this.MappingUrls = new HashMap();
-                 this.MappingUrls.put(url, new Mapping(className.getSimpleName(), declaredMethod.getName()));
+                 Mapping m = new Mapping(className.getSimpleName(), declaredMethod.getName());
+                 this.MappingUrls.put(url,m );
+                 System.out.println(m.getClassName());
+                 System.out.println(m.getMethod());
              }
          }
     }
 //       
        public void afficherHashMap(){
            for ( HashMap.Entry<String, Mapping> en : this.MappingUrls.entrySet()) {
-            System.out.println(" Le nom de la classe : "+en.getValue().getClassName());
-            System.out.println(" La methode : "+en.getValue().getMethod()); 
+            System.out.println(" Le nom de la classe : "+ en.getValue().getClassName());
+            System.out.println(" La methode : "+ en.getValue().getMethod()); 
            }
        }
-
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-    /**
-     * Handles the HTTP <code>GET</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
-
     
     
 
