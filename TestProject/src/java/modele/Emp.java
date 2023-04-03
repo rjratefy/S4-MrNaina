@@ -2,9 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package etu2056.models;
+package modele;
 
-import etu2056.AllAnnotations.Method;
+import etu2056.AllAnnotations.Url;
 
 /**
  *
@@ -16,13 +16,13 @@ public class Emp {
     
     public Emp(){}
         
-     @Method(name_method = "emp-add")
+     @Url(name_method = "emp-add")
         public void emp_add()
         { 
             System.out.println("emp-add");
         } 
         
-      @Method(name_method = "emp-all")
+      @Url(name_method = "emp-all")
          public void emp_all()
         { 
             System.out.println("emp-all");

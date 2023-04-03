@@ -15,7 +15,7 @@ import java.lang.annotation.Target;
  */ 
 @Retention(RetentionPolicy.RUNTIME)
 @Target (ElementType.METHOD)
-public @interface Method { 
+public @interface Url{ 
     String name_method() default "";
     
 }
