@@ -13,7 +13,7 @@ package etu2056.framework.servlet;
  * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
  */
 
-import etu2056.AllAnnotations.Method;
+import etu2056.AllAnnotations.Url;
 import etu2056.framework.Annotation;
 import etu2056.framework.Mapping;
 import java.io.IOException;
@@ -93,8 +93,8 @@ public class FrontServlet extends HttpServlet {
         public void insertHashMap(Class <?> className) {
          for (java.lang.reflect.Method declaredMethod : className.getDeclaredMethods()) {
            // System.out.println(declaredMethod.getAnnotation(Method.class));
-             if (declaredMethod.getAnnotation(Method.class) != null){
-                 String url = declaredMethod.getAnnotation(Method.class).name_method();
+             if (declaredMethod.getAnnotation(Url.class) != null){
+                 String url = declaredMethod.getAnnotation(Url.class).name_method();
                //System.out.println(url);
                  this.MappingUrls = new HashMap();
                  Mapping m = new Mapping(className.getSimpleName(), declaredMethod.getName());
