@@ -4,7 +4,12 @@
  */
 package etu2056.models;
 
+<<<<<<< Updated upstream:ProjectServlet/src/java/etu2056/models/Emp.java
 import etu2056.AllAnnotations.Method;
+=======
+import etu2056.AllAnnotations.Url;
+import etu2056.framework.servlet.ModelView;
+>>>>>>> Stashed changes:TestProject/src/java/modele/Emp.java
 
 /**
  *
@@ -16,16 +21,30 @@ public class Emp {
     
     public Emp(){}
         
+<<<<<<< Updated upstream:ProjectServlet/src/java/etu2056/models/Emp.java
      @Method(name_method = "emp-add")
         public void emp_add()
+=======
+     @Url(name_method = "/emp-add")
+        public ModelView findall()
+>>>>>>> Stashed changes:TestProject/src/java/modele/Emp.java
         { 
-            System.out.println("emp-add");
+            ModelView mv= new ModelView(); 
+            mv.setView("front.jsp");
+            return mv;
         } 
         
+<<<<<<< Updated upstream:ProjectServlet/src/java/etu2056/models/Emp.java
       @Method(name_method = "emp-all")
          public void emp_all()
+=======
+      @Url(name_method = "/yay")
+         public ModelView emp_all()
+>>>>>>> Stashed changes:TestProject/src/java/modele/Emp.java
         { 
-            System.out.println("emp-all");
+            ModelView mv= new ModelView(); 
+            mv.setView("front.jsp");
+            return mv;
         }
 }
     
